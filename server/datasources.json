@@ -1,0 +1,12 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "mysql",
+    "database": "loopback-auth-demo",
+    "debug": true,
+    "host": "localhost",
+    "username": "root",
+    "password": "test",
+    "port": 3306
+  }
+}
