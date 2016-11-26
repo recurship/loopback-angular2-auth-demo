@@ -39,9 +39,9 @@ export class AuthService extends LoopBackAuth {
     }
 
     persist(prop: string, value: any): void {
-        if(this.remembeMe){
+        if(this.remembeMe) {
             super.persist(prop, value);
-        }else{
+        } else {
             sessionStorage.setItem(prop, JSON.stringify(value));
         }
     }
