@@ -26,10 +26,10 @@ boot(app, __dirname, function(err) {
   // start the server if `$ node server.js`
   if (require.main === module) {
     console.log(app.dataSources);
-    var dataSource = app.dataSources.db;       
-    dataSource.autoupdate(null, function (err) {
-        if(err) console.log(err);
-    }); 
+    var dataSource = app.dataSources.db;
+    dataSource.autoupdate(null, function(err) {
+      if (err) console.log(err);
+    });
     app.start();
   }
 });
