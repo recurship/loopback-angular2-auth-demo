@@ -20,6 +20,7 @@
     "loopback-component-explorer": "^2.4.0",
     "loopback-connector-mysql": "^2.4.0",
     "loopback-datasource-juggler": "^2.39.0",
+    "mailgun-js": "^0.7.14",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^1.0.1"
   },

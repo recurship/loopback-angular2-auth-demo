@@ -13,11 +13,12 @@ export class NavgationComponent implements OnInit {
   isLogin: boolean = false;
 
   constructor(
-    private router: Router, 
+    private router: Router,
     private userApi: AppUserApi) {
-    
+
     this.router.events.subscribe((route) => {
-      this.isLogin = route.url == '/login'; 
+      this.isLogin = route.url.match('/login') !== null ||
+        route.url.match('/reset') !== null;
     });
   }
 

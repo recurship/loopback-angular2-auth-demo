@@ -12,6 +12,7 @@ import { NavgationComponent } from './shared/navgation/navgation.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoginComponent } from './pages/login/login.component';
     NavgationComponent,
     HomeComponent,
     AboutComponent,
-    LoginComponent
+    LoginComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,7 @@ import { LoginComponent } from './pages/login/login.component';
     SDKModule.forRoot(),
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent },
+      { path: 'reset', component: ResetPasswordComponent },
       { path: '', component: HomeComponent, canActivate: [AuthGuard] },
       { path: 'about', component: AboutComponent, canActivate: [AuthGuard] },
       { path: '**', redirectTo: '/' }

@@ -1,7 +1,39 @@
-<h3>Login!</h3>
+<div class="row">
+  <div class="col-md-4">
+    <form *ngIf="state == 'login'">
+      <h3>Login</h3>
+      <input type="text" class="form-control" #email placeholder="Email" />
+      <input type="password" class="form-control" #password placeholder="Password" />
+      <br />
+      <a class="btn btn-block btn-success" (click)="login(email, password)">Login</a>
+      <a class="btn btn-block btn-info" (click)="setState('reset')">Reset password</a>
+      <a class="btn btn-block btn-info" (click)="setState('signup')">Signup</a>
+    </form>
 
-<form>
-  <input type="text" class="form-control" #email>
-  <input type="password" class="form-control" #password>
-  <a class="btn btn-sm" (click)="login(email, password)">Login</a>
-</form>
+    <form *ngIf="state == 'reset'">
+      <h3>Reset Password</h3>
+      <input type="text" #email class="form-control" placeholder="Email" />
+      <br />
+      <a class="btn btn-block btn-success" (click)="resetPassword(email)">Reset password</a>
+      <a class="btn btn-block btn-success" (click)="setState('login')">Login</a>
+      <a class="btn btn-block btn-info" (click)="setState('signup')">Signup</a>
+    </form>
+
+    <form *ngIf="state == 'signup'">
+      <h3>Login</h3>
+      <input type="text" class="form-control" #username placeholder="Username" />
+      <input type="text" class="form-control" #email placeholder="Email" />
+      <input type="password" class="form-control" #password placeholder="Password" />
+      <input type="confirmation" class="form-control" #confirmPassword placeholder="Confirm Password" />
+      <select class="form-control" #type>
+        <option value="free">Free</option>
+        <option value="paid">Paid</option>
+      </select>
+      <br />
+      <a class="btn btn-block btn-success" 
+        (click)="signup(username, email, password, confirmPassword, type)">Signup</a>
+      <a class="btn btn-block btn-info" (click)="setState('reset')">Reset password</a>
+      <a class="btn btn-block btn-info" (click)="setState('login')">Login</a>
+    </form>
+  </div>
+</div>
