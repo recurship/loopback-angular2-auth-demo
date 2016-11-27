@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { SDKToken, UserApi } from '../../sdk';
+import { SDKToken, AppUserApi } from '../../sdk';
 import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-login',
@@ -11,7 +11,7 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent implements OnInit {
 
   constructor(
-    private accountApi: UserApi, 
+    private userApi: AppUserApi, 
     private authService: AuthService,
     private router: Router) {
   }
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   login(email, password) {
-    this.accountApi.login({ email: email.value, password: password.value })
+    this.userApi.login({ email: email.value, password: password.value })
     .subscribe((token: SDKToken) => {
       this.authService.setUser(token);
       this.router.navigate(['/']);

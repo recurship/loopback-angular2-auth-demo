@@ -6,7 +6,9 @@
     "lint": "eslint .",
     "start": "node .",
     "posttest": "npm run lint && nsp check",
-    "test": "mocha"
+    "test": "mocha",
+    "remove-sdk": "rm -rf client/src/app/sdk",
+    "generate": "npm run remove-sdk;./node_modules/.bin/lb-sdk server/server client/src/app/sdk -i disabled"
   },
   "dependencies": {
     "@mean-expert/loopback-sdk-builder": "^2.1.0-beta.17",

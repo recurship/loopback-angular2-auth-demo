@@ -24,7 +24,7 @@ The Angular2 code is generated via `angular-cli`.
 - cd client
 - npm install
 - # to generate the Loopback Models and Services
-- ./node_modules/.bin/lb-sdk server/server app/shared/sdk -i disabled 
+- npm run generate 
 
 ### Run
 

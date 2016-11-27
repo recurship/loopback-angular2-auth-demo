@@ -15,10 +15,7 @@
   },
   "User": {
     "dataSource": "db",
-    "public": true,
-    "options": {
-      "emailVerificationRequired": false
-    }
+    "public": false
   },
   "AccessToken": {
     "dataSource": "db",
@@ -35,5 +32,12 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "AppUser": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "emailVerificationRequired": false
+    }
   }
 }
