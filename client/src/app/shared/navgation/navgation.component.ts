@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { AppUserApi } from '../../sdk';
+
 @Component({
   selector: 'app-navgation',
   templateUrl: './navgation.component.html',
@@ -10,14 +12,21 @@ export class NavgationComponent implements OnInit {
 
   isLogin: boolean = false;
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router, 
+    private userApi: AppUserApi) {
+    
     this.router.events.subscribe((route) => {
-      console.log(route.url, route.url == '/login');
       this.isLogin = route.url == '/login'; 
     });
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  logout() {
+    this.userApi.logout().subscribe((response) => {
+      this.router.navigate(['/login']);
+    });
   }
 
 }
